@@ -1,0 +1,110 @@
+Selenium Framework
+This Selenium-based framework is built using Java, Maven, TestNG, and IntelliJ IDEA for automated testing of web applications. It follows the Page Object Model (POM) design pattern for maintainability and scalability.
+
+Prerequisites
+Before setting up the framework, make sure you have the following tools installed:
+
+Java 8+: Required for running Selenium WebDriver and Maven.
+Maven: Used to manage project dependencies.
+IntelliJ IDEA: IDE for development.
+Selenium WebDriver: Already included in the project dependencies.
+TestNG: The testing framework used for organizing and running tests.
+
+Setup
+Clone the repository: https://github.com/sowabdou/Selenium-Project.git
+
+Open the project in IntelliJ IDEA:
+
+Launch IntelliJ IDEA and click on Open.
+Navigate to the folder where the repository was cloned, and open the project.
+Install dependencies using Maven:
+
+IntelliJ IDEA will automatically detect the Maven pom.xml file and download all the necessary dependencies. If it doesn’t automatically download them, you can manually trigger it by following these steps:
+
+Click on View -> Tool Windows -> Maven.
+In the Maven tool window, click on the Refresh button to download all dependencies.
+
+Usage
+Running Tests in IntelliJ IDEA
+Right-click on the test method or class: In the Project view, navigate to the test class or method you want to run.
+
+Choose Run 'TestName': IntelliJ will execute the test with TestNG.
+![image](https://github.com/user-attachments/assets/6fe681b3-605c-463f-b2b2-4533192fe4a8)
+
+![image](https://github.com/user-attachments/assets/ac32468d-51fa-4451-b158-9d9289eb33d6)
+
+Running All Tests:
+You can run the entire suite of tests using TestNG configuration in IntelliJ IDEA:
+
+Right-click on testng.xml and select Run 'testng.xml'.
+Alternatively, you can run all tests using Maven, from terminal, run:
+mvn test
+
+Folder Structure
+selenium-framework/
+├── src/
+│   ├── main/java/
+│   │   └── pages/
+│   │               └── BasePage.java
+│   │               └── ContactUsPage.java
+│   │               └── LoginPage.java
+│   │               └── ProductsPage.java
+│   │               └── RegisterPage.java
+│   │               └── TestCasesPage.java
+│   └── test/data/
+│   │               └── credentials.json
+│   │               └── testFile.txt
+│   └── test/java/
+│               └── testCases/
+│   │               └── BaseTest.java
+│   │               └── ContactUsTest.java
+│   │               └── LoginTest.java
+│   │               └── ProductsTest.java
+│   │               └── RegisterTest.java
+│   │               └── TestCasesTest.java
+├── target/
+│   └── classes/
+│   └── generated-sources/
+│   └── generated-test-sources/
+│   └── maven-status/
+│   └── surefire-reports/
+│   └── test-classes/
+├── testng.xml
+├── pom.xml
+
+Explanation:
+1. src/main/java/:
+This folder contains the core Java code and business logic of the framework.
+
+pages/:
+This is where the Page Object Model (POM) classes are stored. Each class in this folder corresponds to a specific page in your application under test.
+BasePage.java: The base class for all Page Object classes, providing common functionality that can be shared across all pages.
+ContactUsPage.java: Represents the Contact Us page and contains elements and actions specific to this page.
+LoginPage.java: Represents the Login page and contains login-specific methods and elements.
+ProductsPage.java: Contains elements and methods for interacting with the product listing page.
+RegisterPage.java: Contains elements and methods for interacting with the registration page.
+TestCasesPage.java: Could be a placeholder for any custom test case pages or specific page logic related to tests.
+2. src/test/data/:
+This folder holds any external test data or configuration files needed for the tests.
+
+credentials.json: A JSON file that could contain user credentials for login tests (e.g., username, password).
+testFile.txt: A placeholder text file used for trrdting contact form.
+3. src/test/java/:
+This folder contains the test scripts and is where you define your actual test cases.
+
+testCases/:
+Contains the individual test classes that contain the actual TestNG test cases.
+BaseTest.java: The base class for setting up WebDriver, configuration, and common utilities for all tests.
+ContactUsTest.java: Test cases that validate the functionality of the Contact Us page.
+LoginTest.java: Test cases that validate the login process.
+ProductsTest.java: Test cases for validating product-related functionalities.
+RegisterTest.java: Test cases for validating the registration process.
+TestCasesTest.java: Could be an additional file to organize and run a variety of other specific tests.
+
+![image](https://github.com/user-attachments/assets/565b4de0-e1f5-4b77-9f38-c674a09dfae5)
+
+4. target/:
+This folder is created by Maven when building the project. It contains compiled classes, reports, and other build-related files. 
+surefire-reports/: Contains the reports generated by the Maven Surefire plugin (TestNG reports for test execution).
+
+![image](https://github.com/user-attachments/assets/e14b725f-f2a7-4c29-8ffe-da30bee58b27)
